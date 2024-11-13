@@ -74,6 +74,7 @@ class ShittyModManager(QWidget):
             return
 
         helper.shared.mods.read_xml()
+        helper.shared.config.read_xml()
         self.mod_list.mod_list.read_mods_data()
         self.mod_list.adjust_size()
         print("Reading mods...")
@@ -83,4 +84,5 @@ class ShittyModManager(QWidget):
         if not self.check_paths_complete():
             return
         helper.shared.mods.write_back()
+        helper.shared.config.write_back()
         print("Saved mods.")
